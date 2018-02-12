@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment</title>
+	<style type="text/css">
+		html,body{
+			margin: 0;
+			padding: 0;
+			overflow-x: hidden;
+			box-sizing: border-box;
+		}
+        /*header*/
+        #header{
+        	position: relative;
+        }
+        #header .header-wrapper{
+        	background: lightgray;
+        	/*border: 2px solid red;*/
+        	padding: 1px;
+        	height: 65px;
+        }
+        #header nav{
+        	display: inline-block;
+        	/*vertical-align: middle;*/
+        	position: absolute;
+        	top: -7%;
+        	right: 0;
+        }
+        #header ul{
+        	list-style-type: none;
+        	padding: 0;
+        }
+         #header li{
+         	background-color: darkgray;
+        	display: inline-block;
+        	margin-right: 10px;
+        }
+        #header li a{
+        	text-decoration: none;
+        	padding: 9px;
+    		display: inline-block;
+    		color: white;
+    		text-align: center;
+    		/*vertical-align: middle;
+    		line-height: 65px;*/
+        }
+        #header .logo-wrapper{
+        	position: absolute;
+        	top: -13%;
+        }
+		/*Carousal*/
+		#wrapper{
+			position: relative;
+			height: 323px;
+		}
+		#container{
+			width: 300%;
+			/*width: 1000px;*/
+			/*margin: auto;*/
+			overflow: hidden;
+			background: #fff;
+			color: black;
+			-webkit-transition: margin-left 500ms ease-in-out;
+	        -moz-transition: margin-left 500ms ease-in-out;
+	        -o-transition: margin-left 500ms ease-in-out;
+	        -ms-transition: margin-left 500ms ease-in-out;
+	        transition: margin-left 500ms ease-in-out;
+	        /*position: relative;*/
+		}
+		.section{
+			width:33.3333%;			
+			/*width: 800px;*/
+			height: 323px;
+			float: left;
+			}
+		.section h2{
+			text-align: center;
+			vertical-align: middle;
+			line-height: 323px;
+		}
+		#next,#prev{
+			position: absolute;
+			top: 50%;
+			margin-top: -22px;
+            padding: 16px;
+		}
+		#next{
+			right: 0;
+		}
+
+		/*Columns*/
+		#section-columns .section-columns-wrapper{
+			padding-top: 18px;
+			display: grid;
+			grid-template-columns: 25% 25% 25% 25%;
+		}
+
+		/*Media query*/
+		@media only screen and (max-width: 500px) {
+   	     #section-columns .section-columns-wrapper{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+	<div class="header-wrapper">
+		<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</nav>
+		<div class="logo-wrapper">
+			<h2>Logo</h2>
+		</div>
+	</div>
+</header>
+
+
+
+	<!-- Carousal -->
+<div id="wrapper" style="padding-top: 10px;">
+<div id="container">
+	<div class="section" id="text-one">
+		<h2>One</h2>
+	</div>
+	<div class="section" id="text-two">
+		<h2>Two</h2>
+	</div>
+	<div class="section" id="text-three">
+		<h2>Three</h2>
+	</div>
+</div>
+<button onclick="Carousel.next()" id="next">Next</button>
+<button onclick="Carousel.prev()" id="prev">Prev</button>
+</div>
+
+
+<section id="section-columns">
+	<div class="section-columns-wrapper">
+		<div>
+			<h3>Heading One</h3>
+			<ul>
+				<li>One</li>
+				<li>Two</li>
+				<li>Three</li>
+			</ul>
+		</div>
+
+		<div>
+			<h3>Heading Two</h3>
+			<ul>
+				<li>One</li>
+				<li>Two</li>
+				<li>Three</li>
+			</ul>
+		</div>
+
+		<div>
+			<h3>Heading Three</h3>
+			<ul>
+				<li>One</li>
+				<li>Two</li>
+				<li>Three</li>
+			</ul>
+		</div>
+
+		<div>
+			<h3>Heading Four</h3>
+			<ul>
+				<li>One</li>
+				<li>Two</li>
+				<li>Three</li>
+			</ul>
+		</div>
+	</div>
+</section>
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
